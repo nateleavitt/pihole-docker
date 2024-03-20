@@ -1,0 +1,20 @@
+  1 version: "3"
+  2
+  4 services:
+  5   pihole:
+  6     container_name: pihole
+  7     image: pihole/pihole:latest
+ 13     env_file: .env
+        # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+  9     ports:
+ 10       - "53:53/tcp"
+ 11       - "53:53/udp"
+ 12       - "8053:80/tcp"
+ 14     # These folders will contain the config as it's setup in the admin interface
+ 15     volumes:
+ 16       - './etc-pihole:/etc/pihole'
+ 17       - './etc-dnsmasq.d:/etc/dnsmasq.d'
+        #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+        # cap_add:
+        # - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+ 19     restart: unless-stopped
