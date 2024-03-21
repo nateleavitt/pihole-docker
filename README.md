@@ -6,4 +6,4 @@ This is for setting up a Pi-hole DNS server that will be running inside docker.
 
 ### Setup
 
-You can follow detailed instructions here: [https://github.com/nateleavitt/pihole-docker](https://github.com/nateleavitt/pihole-docker)
+You can follow detailed instructions here: [https://n8bit.io/posts/pihole/](https://n8bit.io/posts/pihole/)
